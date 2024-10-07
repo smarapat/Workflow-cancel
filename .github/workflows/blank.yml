@@ -1,8 +1,5 @@
 name: cancel-workflow
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
 jobs:
   job1:
     runs-on: ubuntu-latest

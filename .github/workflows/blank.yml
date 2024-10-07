@@ -1,20 +1,20 @@
 name: cancel-workflow
 on: workflow_dispatch
 jobs:
-  job1:
+  test-job1:
       runs-on: ubuntu-latest
       steps:
         - name: Step 1
-          run: echo "Job 1"
+          run: exit 1
 
-  job2:
+  test-job2:
     runs-on: ubuntu-latest
     if: success() # This job will only run if job1 succeeds
     steps:
       - name: Step 2
         run: echo "Job 2"
 
-  job3:
+  cancel-workflow:
     runs-on: ubuntu-latest
     if: success() # This job will only run if job1 succeeds
     steps:

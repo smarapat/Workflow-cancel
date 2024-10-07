@@ -1,0 +1,25 @@
+name: cancel-workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: exit 1  # Simulate a failure
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 2
+        run: echo "Job 2"
+
+  job3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 3
+        run: echo "Job 3"
+strategy:
+  fail-fast: true
